@@ -27,17 +27,48 @@ using namespace std;
 ll cs = 1;
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    int a[n];
-    for ()
+    ll n;
+    cin >> n;
+    string s;
+    cin >> s;
+    if (n % 3 == 1)
+    {
+        yes;
+        return;
+    }
+
+    for (char c = 'a'; c <= 'z'; c++)
+    {
+        int l = INT_MAX, r = INT_MIN;
+        for (int i = 0; i < n; i++)
+        {
+            if (s[i] == c)
+            {
+                if (i % 3 == 0)
+                {
+                    l = min(l, i);
+                }
+                if ((n - 1 - i) % 3 == 0)
+                {
+                    r = max(r, i);
+                }
+            }
+        }
+        if (l < r)
+        {
+            // cout << c << endl;
+            yes;
+            return;
+        }
+    }
+    no;
 }
 int main()
 {
     fast;
     ll t;
-    // cin>>t;
-    // while(t--)
-    solve();
+    cin >> t;
+    while (t--)
+        solve();
     return 0;
 }
