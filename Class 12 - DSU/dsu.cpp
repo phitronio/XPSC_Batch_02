@@ -25,7 +25,7 @@ void dsu_union_by_rank(int a, int b)
 {
     int leaderA = dsu_find(a);
     int leaderB = dsu_find(b);
-    if (leaderA != leaderB)
+    if (leaderA != leaderB) 
     {
         if (parentLevel[leaderA] > parentLevel[leaderB])
         {
